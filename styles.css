@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+}
+.box {
+  color: yellow;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+#outer-element {
+  background-color: grey;
+  height: 150px;
+  width: 400px;
+}
