@@ -8,6 +8,21 @@ function update(id, placeholder) {
     ).innerHTML = `I am placeholder: ${placeholder}`;
   });
 }
+//false - the event handler is set in the bubbling phase
 document
   .getElementById("outer-element")
-  .addEventListener("click", e => console.log("Clicked", e.toElement.id));
+  .addEventListener("click", e => console.log(e.toElement.id), false);
+
+document.querySelector("#outer-element").addEventListener(
+  "click",
+  e => {
+    if (e.target.tagName === "BUTTON") {
+      let number_left = document.querySelectorAll(".box").length;
+      if (number_left > 1) {
+        var remove = e.target;
+        remove.parentNode.removeChild(remove);
+      }
+    }
+  },
+  false
+);
